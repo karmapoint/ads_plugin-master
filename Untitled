@@ -1,0 +1,25 @@
+makeNetWorkRequest(cb)
+
+MakeREQUESTFUNCTION(url){
+  return new Promise(function(res,rej){
+      var reqObj = makeHttpRequest(url)
+
+      reqObj.onStatusChange(function(response){
+
+        if(response.good()){
+          res(...data)
+        } else {
+          rej(...data)
+        }
+    })
+  })
+}
+
+
+MakeREQUESTFUNCTION('/user-crednetials')
+  .then(function(responseData){
+
+  })
+  .catch(function(errData){
+
+  })
